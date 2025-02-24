@@ -1,0 +1,38 @@
+git --diff a/CMakePresets.json b/CMakePresets.json
+--- a/CMakePresets.json 2025-02-02 12:31:21.293594051 +0000
++++ b/CMakePresets.json 2025-02-02 13:09:40.207427326 +0000
+@@ -58,6 +58,10 @@
+       "cacheVariables": {
+         "AMDGPU_TARGETS": "gfx900;gfx940;gfx941;gfx942;gfx1010;gfx1012;gfx1030;gfx1100;gfx1101;gfx1102"
+       }
++    },
++    {
++      "name": "Vulkan",
++      "inherits": [ "Default" ]
+     }
+   ],
+   "buildPresets": [
+@@ -105,6 +109,11 @@
+       "name": "ROCm 6",
+       "inherits": [ "ROCm" ],
+       "configurePreset": "ROCm 6"
+-    }
++    },
++    {
++      "name": "Vulkan",
++      "targets": [ "ggml-vulkan" ],
++      "configurePreset": "Vulkan"
++      }
+   ]
+ }
+--- a/discover/gpu.go	2025-02-02 14:41:15.178673705 +0000
++++ b/discover/gpu.go	2025-02-02 14:41:19.541625469 +0000
+@@ -425,7 +425,7 @@
+ 				gpuInfo.ID = C.GoString(&memInfo.gpu_id[0])
+ 				gpuInfo.Compute = fmt.Sprintf("%d.%d", memInfo.major, memInfo.minor)
+ 				gpuInfo.MinimumMemory = 0
+-				gpuInfo.DependencyPath = depPaths
++				gpuInfo.DependencyPath = []string{LibOllamaPath}
+ 				gpuInfo.Name = C.GoString(&memInfo.gpu_name[0])
+ 				gpuInfo.DriverMajor = int(memInfo.major)
+ 				gpuInfo.DriverMinor = int(memInfo.minor)
