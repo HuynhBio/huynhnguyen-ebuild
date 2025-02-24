@@ -36,14 +36,14 @@ CPU_FLAGS=( "${X86_CPU_FLAGS[@]/#/cpu_flags_x86_}" )
 IUSE="${CPU_FLAGS[*]}"
 
 
-#DEPEND="
-#	>=dev-lang/go-1.23.4
-#"
-
-RDEPEND="
-	acct-group/ollama
-	acct-user/ollama
+DEPEND="
+	>=dev-lang/go-1.23.4
 "
+
+#RDEPEND="
+#	acct-group/ollama
+#	acct-user/ollama
+#"
 
 PATCHES=(
     "${FILESDIR}/${PN}-9999-include-cstdint.patch"
