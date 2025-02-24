@@ -38,6 +38,7 @@ IUSE="${CPU_FLAGS[*]}"
 
 DEPEND="
 	>=dev-lang/go-1.23.4
+	media-libs/shaderc
 "
 
 #RDEPEND="
