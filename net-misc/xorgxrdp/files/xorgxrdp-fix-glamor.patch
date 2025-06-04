@@ -1,0 +1,21 @@
+--- a/module/Makefile.am 2022-01-07 16:08:30.550026805 +0100
++++ b/module/Makefile.am 2022-01-07 16:07:59.716456688 +0100
+@@ -36,7 +36,8 @@
+ AM_CFLAGS = \
+   -DXRDP_LIBEXEC_PATH=\"${libexecdir}/xrdp\" \
+   $(XORG_SERVER_CFLAGS) \
+   $(XRDP_CFLAGS) \
++  $(LIBDRM_CFLAGS) \
+   -DPACKAGE_VERSION_MAJOR=@package_version_major@ \
+   -DPACKAGE_VERSION_MINOR=@package_version_minor@ \
+   -DPACKAGE_VERSION_PATCHLEVEL=@package_version_patchlevel@ \
+--- a/xrdpdev/Makefile.am 2022-01-07 16:09:21.820420540 +0100
++++ b/xrdpdev/Makefile.am 2022-01-07 16:08:11.956550683 +0100
+@@ -13,6 +13,7 @@
+ AM_CFLAGS = \
+   $(XORG_SERVER_CFLAGS) \
+   $(XRDP_CFLAGS) \
++  $(LIBDRM_CFLAGS) \
+   -DPACKAGE_VERSION_MAJOR=@package_version_major@ \
+   -DPACKAGE_VERSION_MINOR=@package_version_minor@ \
+   -DPACKAGE_VERSION_PATCHLEVEL=@package_version_patchlevel@ \

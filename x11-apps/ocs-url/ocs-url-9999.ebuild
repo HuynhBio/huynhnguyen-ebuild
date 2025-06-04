@@ -10,7 +10,7 @@ HOMEPAGE="https://opendesktop.org/p/1136805"
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	SRC_URI=""
-	KEYWORDS=""
+	KEYWORDS="~amd64"
 	EGIT_REPO_URI="https://git.opendesktop.org/dfn2/${PN}.git"
 else
 	SRC_URI="https://git.opendesktop.org/akiraohgaki/${PN}/-/archive/release-${PV}/${PN}-release-${PV}.tar.bz2"

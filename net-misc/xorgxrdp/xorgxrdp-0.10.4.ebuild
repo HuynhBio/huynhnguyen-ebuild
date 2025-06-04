@@ -23,9 +23,9 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	dev-lang/nasm:0="
 
-#PATCHES=(
-#	"${FILESDIR}"/${PN}-fix-glamor.patch
-#)
+PATCHES=(
+	"${FILESDIR}"/${PN}-fix-glamor.patch
+)
 
 src_configure() {
 	local myconf=(
