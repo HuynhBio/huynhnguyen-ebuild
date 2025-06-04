@@ -40,9 +40,6 @@ BDEPEND="${RDEPEND}
 
 src_prepare() {
 	default
-
-	# disallow root login by default
-	#sed -i -e '/^AllowRootLogin/s/true/false/' sesman/sesman.ini || die
 }
 
 src_configure() {
