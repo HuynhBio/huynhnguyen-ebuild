@@ -27,7 +27,6 @@ RDEPEND="
 	opus? ( media-libs/libopusenc:0= )
 	pam? ( sys-libs/pam:0= )
 	pixman? ( x11-libs/pixman:0= )
-	pulseaudio? ( media-sound/pulseaudio:0= )
 "
 BDEPEND="${RDEPEND}
 	virtual/pkgconfig
